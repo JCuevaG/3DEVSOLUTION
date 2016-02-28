@@ -1,0 +1,45 @@
+﻿@model string
+
+<h2>Index</h2>
+
+<script>    
+    
+    var myApp = angular.module("enanoApp", []);
+    myApp.controller('myCtrl', function($scope) {
+        $scope.lista = @Html.Raw(Model);        
+    });
+
+</script>
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table" ng-controller="myCtrl">
+    <tr>
+        <th>
+            Id
+        </th>
+        <th>
+            Product Name
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Price
+        </th>
+    </tr>
+
+    <tr ng-repeat="prod in lista">
+        <td>
+            {{prod.id}}
+        </td>
+        <td>{{prod.productName}}</td>
+        <td>{{prod.description}}</td>
+        <td>{{prod.price}}</td>
+
+    </tr>
+
+
+</table>
