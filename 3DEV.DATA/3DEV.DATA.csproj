@@ -55,6 +55,7 @@
     <Compile Include="DataContext.cs" />
     <Compile Include="GenericRepository.cs" />
     <Compile Include="IRepository.cs" />
+    <Compile Include="ProductRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
