@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 
 using _3DEV.MVC.Models;
+using _3DEV.DATA;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
@@ -12,17 +14,15 @@ namespace _3DEV.MVC.Controllers
 {
     public class ProductController : Controller
     {
+
+        ApplicationUnit unit = new ApplicationUnit();
+
+
+
         // GET: Product
         public ActionResult Index()
         {
-            var lista = new[]{
-                new ProductoModel{
-                    Id = 1,
-                    ProductName = "easdas",
-                    Price=2,
-                    Quantity=10
-                }
-            };
+            var lista = unit.Products.GetAll().ToArray();
 
             
             var serializer = new JsonSerializerSettings()

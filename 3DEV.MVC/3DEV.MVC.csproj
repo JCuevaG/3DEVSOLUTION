@@ -46,6 +46,12 @@
     <Reference Include="AutoMapper">
       <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\..\..\Desktop\Proyecto\3DEV\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\..\..\Desktop\Proyecto\3DEV\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -108,7 +114,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="js\enanoApp.js" />
+    <Content Include="js\3devapp.js" />
+    <Content Include="js\product\product-controller.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -902,6 +909,7 @@
     </Compile>
     <Compile Include="Models\ProductoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\ProductVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -943,8 +951,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="js\controller\" />
-    <Folder Include="js\services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\3DEV.DATA\3DEV.DATA.csproj">
+      <Project>{5c6933c4-34aa-4c25-9164-3cd290f3fbae}</Project>
+      <Name>3DEV.DATA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\3DEV.MODELS\3DEV.MODELS.csproj">
+      <Project>{ecf9c6cc-c593-4658-8900-d959ecb39ba0}</Project>
+      <Name>3DEV.MODELS</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

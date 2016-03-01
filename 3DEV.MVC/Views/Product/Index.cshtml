@@ -2,20 +2,18 @@
 
 <h2>Index</h2>
 
-<script>    
-    
-    var myApp = angular.module("enanoApp", []);
-    myApp.controller('myCtrl', function($scope) {
-        $scope.lista = @Html.Raw(Model);        
-    });
-
-</script>
+@section scripts{
+    <script src="~/js/product/product-controller.js"></script>
+    <script type="text/javascript">   
+        var products = @Html.Raw(Model);
+    </script>
+}
 
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table" ng-controller="myCtrl">
+<table class="table" ng-controller="productController">
     <tr>
         <th>
             Id
@@ -31,7 +29,7 @@
         </th>
     </tr>
 
-    <tr ng-repeat="prod in lista">
+    <tr ng-repeat="prod in products">
         <td>
             {{prod.id}}
         </td>
