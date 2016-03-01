@@ -8,10 +8,12 @@ namespace _3DEV.DATA
 {
     public interface IRepository<T> where T : class
     {
-        IQueryable<T> List();
+        IQueryable<T> GetAll();
+        T GetById(int id);
         void Add(T entity);
-        void Delete(T entity);
         void Update(T entity);
-        T FindById(int Id);
+        void Delete(T entity);
+        void Delete(int id);
+        void Detach(T entity);
     }
 }
