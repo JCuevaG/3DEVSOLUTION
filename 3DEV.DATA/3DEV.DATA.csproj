@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationUnit.cs" />
     <Compile Include="Configuration\CustomDatabaseInitializer.cs" />
     <Compile Include="Configuration\ProductConfiguration.cs" />
     <Compile Include="DataContext.cs" />
