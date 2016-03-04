@@ -9,7 +9,7 @@ using System.Data.Entity;
 
 namespace _3DEV.DATA.Configuration
 {
-    public class CustomDatabaseInitializer : CreateDatabaseIfNotExists<DataContext>
+    public class CustomDatabaseInitializer : DropCreateDatabaseIfModelChanges<DataContext>//CreateDatabaseIfNotExists<DataContext>
     {
         protected override void Seed(DataContext context)
         {
@@ -29,8 +29,22 @@ namespace _3DEV.DATA.Configuration
                 product.Price = 100 + (count * 100);
                 product.Description = description[count];
                 product.Quantity = 10 + count;
+                product.CreatedOn = DateTime.Now;
+                product.ModifiedOn = DateTime.Now;
                 context.Products.Add(product);
             }
+
+            Role admin = new Role();
+            admin.RoleName = "admin";
+            context.Roles.Add(admin);
+
+            Role mgr = new Role();
+            mgr.RoleName = "manager";
+            context.Roles.Add(mgr);
+
+            Role usr = new Role();
+            usr.RoleName = "user";
+            context.Roles.Add(usr);
 
             base.Seed(context);
         }

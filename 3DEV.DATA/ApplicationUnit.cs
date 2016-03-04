@@ -11,6 +11,7 @@ namespace _3DEV.DATA
     {
         private DataContext _context = new DataContext();
         private IRepository<Product> _products = null;
+        private IRepository<User> _users = null;
 
         public IRepository<Product> Products
         {
@@ -22,6 +23,18 @@ namespace _3DEV.DATA
                 }
 
                 return this._products;
+            }
+        }
+
+        public IRepository<User> Users {
+            get
+            {
+                if (this._users == null)
+                {
+                    this._users = new GenericRepository<User>(this._context);
+                }
+
+                return this._users;
             }
         }
 
