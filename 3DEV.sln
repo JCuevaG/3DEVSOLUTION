@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3DEV.CONSOLEAPP", "3DEV.CON
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3DEV.MVC", "3DEV.MVC\3DEV.MVC.csproj", "{1897582A-8391-4A26-A7CD-3F9EF2A90C50}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3DEV.ADMIN", "3DEV.ADMIN\3DEV.ADMIN.csproj", "{936D9162-6E09-4AE1-BCD4-D62B7BC2951C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{1897582A-8391-4A26-A7CD-3F9EF2A90C50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1897582A-8391-4A26-A7CD-3F9EF2A90C50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1897582A-8391-4A26-A7CD-3F9EF2A90C50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{936D9162-6E09-4AE1-BCD4-D62B7BC2951C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{936D9162-6E09-4AE1-BCD4-D62B7BC2951C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{936D9162-6E09-4AE1-BCD4-D62B7BC2951C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{936D9162-6E09-4AE1-BCD4-D62B7BC2951C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
