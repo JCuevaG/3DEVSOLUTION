@@ -210,11 +210,15 @@
     <Compile Include="Config.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AccountController.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Controllers\api\ProductsAPIController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
-    <Compile Include="Controllers\products.cs" />
+    <Compile Include="Controllers\products.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -224,7 +228,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\AccountModels.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Models\RoleEvaluator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\ProductsListViewModel.cs" />
@@ -294,6 +300,19 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
     <Content Include="js\3dev.js" />
     <Content Include="js\product\product-controller.js" />
     <Content Include="js\product\product-service.js" />
@@ -1107,19 +1126,6 @@
     </Content>
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Images\accent.png" />
-    <Content Include="Images\bullet.png" />
-    <Content Include="Images\heroAccent.png" />
-    <Content Include="Images\orderedList0.png" />
-    <Content Include="Images\orderedList1.png" />
-    <Content Include="Images\orderedList2.png" />
-    <Content Include="Images\orderedList3.png" />
-    <Content Include="Images\orderedList4.png" />
-    <Content Include="Images\orderedList5.png" />
-    <Content Include="Images\orderedList6.png" />
-    <Content Include="Images\orderedList7.png" />
-    <Content Include="Images\orderedList8.png" />
-    <Content Include="Images\orderedList9.png" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
