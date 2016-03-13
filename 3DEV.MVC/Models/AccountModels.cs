@@ -8,6 +8,7 @@ using System.Web.Security;
 
 namespace _3DEV.MVC.Models
 {
+    //cambios
     public class UsersContext : DbContext
     {
         public UsersContext()
