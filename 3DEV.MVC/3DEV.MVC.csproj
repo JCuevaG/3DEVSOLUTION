@@ -215,8 +215,12 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\products.cs" />
-    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
-    <Compile Include="Filters\ValidationActionFilter.cs" />
+    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Filters\ValidationActionFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
