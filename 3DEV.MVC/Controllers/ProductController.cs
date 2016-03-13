@@ -1,40 +1,56 @@
-﻿using System;
+﻿using _3DEV.DATA;
+using _3DEV.MODELS;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
-using _3DEV.MVC.Models;
-using _3DEV.DATA;
-
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
+using _3DEV.MVC.ViewModels;
 
 namespace _3DEV.MVC.Controllers
 {
+    [Authorize]
     public class ProductController : Controller
     {
+        private ApplicationUnit _unit = new ApplicationUnit();
 
-        ApplicationUnit unit = new ApplicationUnit();
-
-
-
-        // GET: Product
+        [AllowAnonymous]
         public ActionResult Index()
         {
-            var lista = unit.Products.GetAll().ToArray();
-
-            
-            var serializer = new JsonSerializerSettings()
-            {
-                ContractResolver = new CamelCasePropertyNamesContractResolver()
-            };
-            //var jo = Newtonsoft.Json.Linq.JObject.FromObject(lista, serializer);
-            var jo = JsonConvert.SerializeObject(lista,Formatting.None, serializer);
-
-
-            return View("Index","",jo);
-
+            throw new Exception("New Email test Elmah");
+            //ProductsListViewModel vm = new ProductsListViewModel();
+            //var query = this._unit.Products.GetAll().OrderByDescending(x=>x.Id);
+            //vm.Products = query.ToList();
+            //return View(vm);
         }
+
+        public ActionResult New()
+        {
+            ProductViewModel vm = new ProductViewModel();
+            vm.IsNew = true;
+
+            return View("Home",vm);
+        }
+
+        [ActionName("Edit")]
+        public ActionResult Get(int id)
+        {
+            ProductViewModel vm = new ProductViewModel();
+
+            vm.Product = this._unit.Products.GetById(id);
+
+            if (vm.Product != null)
+            {
+                return View("Home", vm);
+            }
+
+            return View("NotFound");
+        }
+        protected override void Dispose(bool disposing)
+        {
+            this._unit.Dispose();
+            base.Dispose(disposing);
+        }
+
     }
 }

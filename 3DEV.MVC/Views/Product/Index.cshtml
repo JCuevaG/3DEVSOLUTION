@@ -1,43 +1,69 @@
-﻿@model string
+﻿@model IEnumerable<_3DEV.MODELS.Product>
 
-<h2>Index</h2>
+@{
+    ViewBag.Title = "Index";
+}
 
 @section scripts{
-    <script src="~/js/product/product-controller.js"></script>
-    <script type="text/javascript">   
-        var products = @Html.Raw(Model);
+    <script type="text/javascript">
+        var products = @Html.Raw(Model)
     </script>
 }
 
+<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table" ng-controller="productController">
+<table>
     <tr>
         <th>
-            Id
+            @Html.DisplayNameFor(model => model.ProductName)
         </th>
         <th>
-            Product Name
+            @Html.DisplayNameFor(model => model.Price)
         </th>
         <th>
-            Description
+            @Html.DisplayNameFor(model => model.Description)
         </th>
         <th>
-            Price
+            @Html.DisplayNameFor(model => model.Quantity)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedOn)
+        </th>
+        <th></th>
     </tr>
 
-    <tr ng-repeat="prod in products">
+@foreach (var item in Model) {
+    <tr>
         <td>
-            {{prod.id}}
+            @Html.DisplayFor(modelItem => item.ProductName)
         </td>
-        <td>{{prod.productName}}</td>
-        <td>{{prod.description}}</td>
-        <td>{{prod.price}}</td>
-
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedOn)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
     </tr>
-
+}
 
 </table>
