@@ -10,18 +10,23 @@ using _3DEV.MVC.ViewModels;
 namespace _3DEV.MVC.Controllers
 {
     [Authorize]
-    public class ProductController : Controller
+    public class ProductController : JsonController
     {
         private ApplicationUnit _unit = new ApplicationUnit();
 
         [AllowAnonymous]
         public ActionResult Index()
         {
-            throw new Exception("New Email test Elmah");
-            //ProductsListViewModel vm = new ProductsListViewModel();
-            //var query = this._unit.Products.GetAll().OrderByDescending(x=>x.Id);
-            //vm.Products = query.ToList();
-            //return View(vm);
+            //throw new Exception("New Email test Elmah");            
+            return View();
+        }
+
+        [AllowAnonymous]
+        public ActionResult getProducts()
+        {
+            var query = this._unit.Products.GetAll().OrderByDescending(x => x.Id).ToList();
+
+            return Json(query, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult New()

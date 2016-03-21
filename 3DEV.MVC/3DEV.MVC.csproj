@@ -215,6 +215,7 @@
     </Compile>
     <Compile Include="Controllers\api\ProductsAPIController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JsonController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\products.cs">
       <SubType>Code</SubType>
@@ -319,6 +320,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="js\product\productsList.html" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-animate.min.js.map" />
