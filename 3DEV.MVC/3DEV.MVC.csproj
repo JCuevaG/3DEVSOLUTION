@@ -321,7 +321,7 @@
     <Content Include="js\3dev.js" />
     <Content Include="js\home.html" />
     <Content Include="js\product\product.html" />
-    <Content Include="js\product\newProduct.html" />
+    <Content Include="js\product\productForm.html" />
     <Content Include="js\product\product-controller.js" />
     <Content Include="js\product\product-service.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

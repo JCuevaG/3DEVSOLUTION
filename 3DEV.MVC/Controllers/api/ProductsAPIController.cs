@@ -9,8 +9,7 @@ using System.Web.Http;
 using System.Data.Entity.Infrastructure;
 
 namespace _3DEV.MVC.Controllers.api
-{
-    [Authorize]
+{    
     public class ProductsAPIController : ApiController
     {
 
@@ -23,8 +22,7 @@ namespace _3DEV.MVC.Controllers.api
             return _unit.Products.GetAll();
         }
 
-        [HttpGet]
-        [Authorize(Roles="admin, manager, user")]
+        [HttpGet]        
         public Product Get(int id)
         {
             Product product = this._unit.Products.GetById(id);
@@ -37,7 +35,7 @@ namespace _3DEV.MVC.Controllers.api
             return product;
         }
                 
-        [Authorize(Roles = "admin, manager, user")]
+        
         public HttpResponseMessage Put(int id, Product product)
         {
             if (!ModelState.IsValid)
@@ -70,8 +68,7 @@ namespace _3DEV.MVC.Controllers.api
         }
 
 
-        [HttpPost]
-        [Authorize(Roles = "admin, manager, user")]
+        [HttpPost]       
         public HttpResponseMessage Post(Product product)
         {
             try

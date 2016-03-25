@@ -1,9 +1,21 @@
-﻿myApp.factory('productRepository', function ($http,$q) {
-    return {
-        get: function () {            
-            var deferred = $q.defer();
-            $http.get('/Product/getProducts').success(deferred.resolve).error(deferred.reject);
-            return deferred.promise;
-        }
+﻿'use strict';
+
+myApp.factory('productRepository', function ($resource, $q) {
+    function getAll() {        
+        return $resource('api/ProductsAPI').query();
+        
     }
+
+
+    function save(product) {
+        return $resource('api/ProductsAPI').save(product);
+    }
+
+    return {
+        getAll: getAll,        
+        save: save
+    }
+    
 });
+
+

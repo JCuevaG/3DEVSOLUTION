@@ -1,4 +1,4 @@
-﻿var myApp = angular.module("3devApp", ["ngRoute"]);
+﻿var myApp = angular.module("3devApp", ["ngRoute", "ngResource"]);
 
 myApp.config(function ($routeProvider) {
     $routeProvider
@@ -13,10 +13,16 @@ myApp.config(function ($routeProvider) {
         })
         .when('/newProduct',
         {
-            templateUrl: 'js/product/newProduct.html',
+            templateUrl: 'js/product/productForm.html',
+            controller: 'productController'
+        })
+        .when('/updateProduct/:id',
+        {
+            templateUrl: 'js/product/productForm.html',
             controller: 'productController'
         })
         .otherwise({
             redirectTo: "/home"
         });
 });
+
