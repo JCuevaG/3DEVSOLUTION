@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html ng-app="3devApp">
+<head lang="es">
+    <title>Product Managment</title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="css/app.css" rel="stylesheet" />
+    <link href="Content/toastr.css" rel="stylesheet" />
+    <!--Jquery-->
+    <script src="Scripts/jquery-2.2.1.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/toastr.js"></script>
+    <!--Angular-->
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="js/3dev.js"></script>
+
+    <!--Products-->
+    <script src="js/product/product-controller.js"></script>
+    <script src="js/product/product-service.js"></script>
+
+
+
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Jefferson APP</a>
+            <div class="navbar-header">
+                <button type="button"
+                        class="navbar-toggle"
+                        data-toggle="collapse"
+                        data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#product">Product</a></li>                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div ng-view></div>
+    </div>
+</body>
+</html>

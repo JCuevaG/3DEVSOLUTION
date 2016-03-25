@@ -1,0 +1,32 @@
+﻿<div class="form-group">
+    <input type="button" class="btn btn-primary" value="Add New Product" ng-click="addNewProduct()" />
+</div>
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading"
+         style="font-size:large">
+        Product
+        List
+    </div>
+    <div class="panel-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Product Name</td>
+                    <td>Description</td>
+                    <td>Price</td>
+                    <td>Quantity</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="product in products">
+                    <td>{{product.productName}}</td>
+                    <td>{{product.description}}</td>
+                    <td>{{product.price}}</td>
+                    <td>{{product.quantity}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
