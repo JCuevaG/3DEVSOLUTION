@@ -1,9 +1,10 @@
-﻿'use strict';
-
-myApp.factory('productRepository', function ($resource, $q) {
+﻿myApp.factory('productRepository', function ($resource, $q) {
     function getAll() {        
-        return $resource('api/ProductsAPI').query();
-        
+        return $resource('api/ProductsAPI').query();        
+    }
+
+    function getById(id) {
+        return $resource('api/ProductsAPI/:id', {id: "@id"}).get({id: id});
     }
 
 
@@ -12,7 +13,8 @@ myApp.factory('productRepository', function ($resource, $q) {
     }
 
     return {
-        getAll: getAll,        
+        getAll: getAll,
+        getById : getById,
         save: save
     }
     
